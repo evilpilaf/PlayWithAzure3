@@ -196,3 +196,6 @@ FakesAssemblies/
 *.opt
 libs/*
 src/*
+libs/
+src/
+node_modules/
