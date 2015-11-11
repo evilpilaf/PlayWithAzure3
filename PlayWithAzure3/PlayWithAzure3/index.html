@@ -2,6 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <title></title>
+    <script>
+        var timeStart = Date.now();
+    </script>
 </head>
 <body ng-app="app">
     <script src="scripts/angular.min.js"></script>
@@ -13,6 +16,19 @@
     <script src="scripts/jquery-2.1.4.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
     <script src="app/app.js"></script>
+    <h1 id="domTimeHeader"></h1>
+    <br />
+    <h1 id="allTimeHeader"></h1>
     <a href="index2.html">Relative scripts bundled</a>
+    <script>
+        $(document).ready(function () {
+            var domReadyTime = 'time until DOM ready: ' + (Date.now() - timeStart).toString();
+            $('#domTimeHeader').text(domReadyTime);
+        });
+        $(window).load(function () {
+            var allReadyTime = 'time until everything loaded: ' + (Date.now() - timeStart).toString();
+            $('#allTimeHeader').text(allReadyTime);
+        });
+    </script>
 </body>
 </html>
