@@ -1,9 +1,27 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
+    <script>
+        var timeStart = Date.now();
+    </script>
     <title>Relative Bundled</title>
 </head>
 <body ng-app="app">
     <script src="libs/libs.min.js"></script>
-    <script src="src/playWithAzure3.min.js"></script></body>
+<script src="src/playWithAzure3.min.js"></script>
+    <h1 id="domTimeHeader"></h1>
+    <br />
+    <h1 id="allTimeHeader"></h1>
+    <script>
+        $(document).ready(function () {
+            const domReadyTime = `time until DOM ready: ${(Date.now() - timeStart).toString()}`;
+            $('#domTimeHeader').text(domReadyTime);
+        });
+        $(window).load(function () {
+            const allReadyTime = `time until everything loaded: ${(Date.now() - timeStart).toString()}`;
+            $('#allTimeHeader').text(allReadyTime);
+        });
+    </script>
+
+</body>
 </html>
