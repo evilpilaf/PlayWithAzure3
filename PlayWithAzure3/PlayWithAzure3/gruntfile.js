@@ -23,7 +23,14 @@ module.exports = function(grunt) {
 		options: {			
 		},
 		libs: {
-			src: ['scripts/*.min.js'],
+			src: ['scripts/angular.min.js',
+        'scripts/angular-animate.min.js',
+        'scripts/angular-route.min.js',
+        'scripts/angular-gettext.min.js',
+        'scripts/typescript.min.js',
+        'scripts/underscore.min.js',
+        'scripts/jquery-2.1.4.min.js',
+        'scripts/bootstrap.min.js'],
 			dest: 'libs/libs.js'			
 		},
 		myApp: {
